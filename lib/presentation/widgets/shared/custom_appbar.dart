@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    final titleStule = Theme.of(context).textTheme.titleMedium;
+    return SafeArea(
+      bottom: false,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: SizedBox(
+          width: double.infinity,
+          child: Row(
+            children: [
+              Icon(Icons.movie_outlined, color: colors.primary,),
+              const SizedBox(width: 5,),
+              Text("Cinemapedia", style: titleStule),
+              const Spacer(),
+              IconButton(onPressed: (){}, icon: Icon(Icons.search))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
